@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dog Image Retriever</title>
+</head>
+<body>
+  <header role="navigation"><h1>Let's get us some dog pictures!</h1></header>
+
+  <main>
+    
+    <form id="multiple-random-images" action="submit">
+      <label for="random-dogs">Multiple random dog images:</label>
+      <input id="random-dogs" type="text" name="number" placeholder="Enter a number (1-50)">
+      <button id='random-button'>Submit</button>
+    </form>
+
+
+
+    <form id="single-breed-image" action="submit">
+      <label for="single-breed">One random image for single breed:</label>
+      <input id="single-breed" type="text" placeholder="Enter a breed">
+      <button action="click">Submit</button>
+    </form>
+
+  
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
