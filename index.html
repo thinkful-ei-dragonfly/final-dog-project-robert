@@ -11,20 +11,23 @@
 
   <main>
     
-    <form id="multiple-random-images" action="submit">
+    <form id="multiple-random-images">
       <label for="random-dogs">Multiple random dog images:</label>
       <input id="random-dogs" type="text" name="number" placeholder="Enter a number (1-50)">
-      <button id='random-button'>Submit</button>
+      <input type="submit" value="Submit" >
     </form>
 
 
 
-    <form id="single-breed-image" action="submit">
+    <form id="single-breed-image">
       <label for="single-breed">One random image for single breed:</label>
-      <input id="single-breed" type="text" placeholder="Enter a breed">
-      <button action="click">Submit</button>
+      <input id="single-breed" type="text" name="breed" placeholder="Enter a breed">
+      <input type="submit" value="Submit">
     </form>
 
+    <div class="results">
+
+    </div>
   
   </main>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
