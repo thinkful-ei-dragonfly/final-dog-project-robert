@@ -10,6 +10,7 @@ const getDogs = (function() {
   function generateMultipleHTML(imageArr) {
     let html = '';
     for (let i = 0; i < imageArr.length; i++) {
+      console.log(imageArr[i]);
       html += `<img src="${imageArr[i]}">`;
     }
     
