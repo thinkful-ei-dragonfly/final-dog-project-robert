@@ -66,7 +66,8 @@ const getDogs = (function() {
         input = 3;
       }
       getRandImages(input)
-        .then(data => generateMultipleHTML(data.message));
+        .then(data => generateMultipleHTML(data.message))
+        .catch(error => console.log(error.message));
 
 
     });
