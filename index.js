@@ -10,7 +10,7 @@ const getDogs = (function() {
   function generateMultipleHTML(imageArr) {
     let html = '';
     for (let i = 0; i < imageArr.length; i++) {
-      console.log(imageArr[i]);
+      // console.log(imageArr[i]);
       html += `<img src="${imageArr[i]}">`;
     }
     
@@ -35,8 +35,8 @@ const getDogs = (function() {
         }
         
         return response.json();
-      })
-      .catch(error => console.log(error.message));
+      });
+    // .catch(error => console.log(error.message));
 
 
   }
@@ -48,15 +48,19 @@ const getDogs = (function() {
 
     return fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
       .then( response => {
-        
         if (!response.ok) {
-          throw new Error('Fetch error requesting image data from server');
+          throw new Error("Sorry, there has been an error getting an image for this entered breed, "
+            + "please try again or enter a different breed.");
         }
         
         return response.json();
       })
-      .catch(error => console.log(error.message));
+      .catch(error => {
+        $('.results').html('');
+        $('.results').append(`<p style="color: red;">${error.message}<p>`);
+      });
   }
+  
 
   function handleInput() {
     
@@ -79,10 +83,8 @@ const getDogs = (function() {
       let input = event.currentTarget.breed.value;
       getSingleBreedImage(input)
         .then(data => generateSingleHTML(data.message))
-        .catch(error => console.log(error.message));
-
-    }
-    );
+        .catch(error => console.log("fetch error, please see documentation."));
+    });
   }
   return {
     handleInput: handleInput,
